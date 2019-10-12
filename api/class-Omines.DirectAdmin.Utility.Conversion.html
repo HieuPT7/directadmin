@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Omines\DirectAdmin\Utility\Conversion</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Utility.html" title="Summary of Omines\DirectAdmin\Utility"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-Omines.html">
+							Omines<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-Omines.DirectAdmin.html">
+							DirectAdmin<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Context.html">
+							Context						</a>
+							</li>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Objects.html">
+							Objects<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Objects.Database.html">
+							Database						</a>
+							</li>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Objects.Domains.html">
+							Domains						</a>
+							</li>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Objects.Email.html">
+							Email						</a>
+							</li>
+					<li>
+						<a href="namespace-Omines.DirectAdmin.Objects.Users.html">
+							Users						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-Omines.DirectAdmin.Utility.html">
+							Utility						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Omines.DirectAdmin.Utility.Conversion.html">Conversion</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Conversion</h1>
+
+
+	<div class="description">
+	<p>Static helper class for various conversion operations.</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Omines.html">Omines</a>\<a href="namespace-Omines.DirectAdmin.html">DirectAdmin</a>\<a href="namespace-Omines.DirectAdmin.Utility.html">Utility</a><br>
+		
+
+				<b>Author:</b>
+				Niels Keurentjes <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6e;i&#101;&#108;&#115;&#x2e;&#x6b;&#x65;&#x75;r&#101;&#110;&#116;&#106;&#x65;&#x73;&#x40;&#x6f;&#109;&#105;&#110;&#101;&#x73;&#x2e;&#x63;&#x6f;m">&#x6e;i&#101;&#108;&#115;&#x2e;&#x6b;&#x65;&#x75;r&#101;&#110;&#116;&#106;&#x65;&#x73;&#x40;&#x6f;&#109;&#105;&#110;&#101;&#x73;&#x2e;&#x63;&#x6f;m</a><br>
+			<b>Located at</b> <a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#13-101" title="Go to source code">DirectAdmin/Utility/Conversion.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="onOff" id="_onOff">
+
+			<td class="attributes"><code>
+				 public static
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_onOff">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#20-30" title="Go to source code">onOff</a>( <span>mixed <var>$input</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Reduces any input to an ON/OFF value.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reduces any input to an ON/OFF value.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$input</var></dt>
+						<dd>Data to convert</dd>
+						<dt><var>$default</var></dt>
+						<dd>Fallback to use if $input is NULL</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>Either ON or OFF
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="processUnlimitedOption" id="_processUnlimitedOption">
+
+			<td class="attributes"><code>
+				 protected static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_processUnlimitedOption">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#32-45" title="Go to source code">processUnlimitedOption</a>( <span>array <var>&amp; $options</var></span>, <span>string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Expands a single option to its unlimited counterpart if NULL or literal 'unlimited'.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Expands a single option to its unlimited counterpart if NULL or literal 'unlimited'.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$options</var></dt>
+						<dd>Array of options to process</dd>
+						<dt><var>$key</var></dt>
+						<dd>Key of the item to process</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="processUnlimitedOptions" id="_processUnlimitedOptions">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_processUnlimitedOptions">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#47-60" title="Go to source code">processUnlimitedOptions</a>( <span>array <var>$options</var></span> )</code>
+
+			<div class="description short">
+				<p>Detects package/domain options that can be unlimited and sets the accordingly.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Detects package/domain options that can be unlimited and sets the accordingly.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$options</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>Modified array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="responseToArray" id="_responseToArray">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_responseToArray">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#62-74" title="Go to source code">responseToArray</a>( <span>string <var>$data</var></span> )</code>
+
+			<div class="description short">
+				<p>Processes DirectAdmin style encoded responses into a sane array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Processes DirectAdmin style encoded responses into a sane array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$data</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sanitizeArray" id="_sanitizeArray">
+
+			<td class="attributes"><code>
+				 public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sanitizeArray">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#76-88" title="Go to source code">sanitizeArray</a>( <span>mixed <var>$result</var></span> )</code>
+
+			<div class="description short">
+				<p>Ensures a DA-style response element is wrapped properly as an array.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Ensures a DA-style response element is wrapped properly as an array.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$result</var></dt>
+						<dd>Messy input</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>Sane output
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toBool" id="_toBool">
+
+			<td class="attributes"><code>
+				 public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toBool">#</a>
+			<code><a href="source-class-Omines.DirectAdmin.Utility.Conversion.html#90-100" title="Go to source code">toBool</a>( <span>mixed <var>$value</var></span>, <span>mixed <var>$default</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Converts values like ON, YES etc. to proper boolean variables.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Converts values like ON, YES etc. to proper boolean variables.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd>Value to be converted</dd>
+						<dt><var>$default</var></dt>
+						<dd>Value to use if $value is NULL</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
