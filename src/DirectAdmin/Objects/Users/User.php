@@ -220,24 +220,6 @@ class User extends BaseObject
     }
 
     /**
-     * @return Domain[]
-     */
-    public function getDatabases()
-    {
-        return $this->getCache(self::CACHE_DATABASES, function () {
-            $databases = [];
-            foreach ($this->getSelfManagedContext()->invokeApiGet('DATABASES') as $fullName) {
-                list($user, $db) = explode('_', $fullName, 2);
-                if ($this->getUsername() != $user) {
-                    throw new DirectAdminException('Username incorrect on database ' . $fullName);
-                }
-                $databases[$db] = new Database($db, $this, $this->getSelfManagedContext());
-            }
-            return $databases;
-        });
-    }
-
-    /**
      * @param string $domainName
      * @return null|Domain
      */
