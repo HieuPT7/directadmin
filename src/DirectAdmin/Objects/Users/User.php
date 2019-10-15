@@ -33,6 +33,9 @@ class User extends BaseObject
     /** @var Domain[] * */
     private $domains;
 
+    /** @var Database[] * */
+    private $databases;
+
     /**
      * Construct the object.
      *
@@ -442,15 +445,27 @@ class User extends BaseObject
     public function getDatabases()
     {
         return $this->getCache(self::CACHE_DATABASES, function () {
-            $databases = [];
+            $this->databases = [];
             foreach ($this->getSelfManagedContext()->invokeApiGet('DATABASES') as $fullName) {
                 list($user, $db) = explode('_', $fullName, 2);
                 if ($this->getUsername() != $user) {
                     throw new DirectAdminException('Username incorrect on database ' . $fullName);
                 }
-                $databases[$db] = new Database($db, $this, $this->getSelfManagedContext());
+                $this->databases[$db] = new Database($db, $this, $this->getSelfManagedContext());
             }
-            return $databases;
+            return $this->databases;
         });
+    }
+
+    /**
+     * @param string $databaseName
+     * @return null|Database
+     */
+    public function getDatabase($databaseName)
+    {
+        if (!isset($this->databases)) {
+            $this->getDatabases();
+        }
+        return isset($this->databases[$databaseName]) ? $this->databases[$databaseName] : null;
     }
 }
