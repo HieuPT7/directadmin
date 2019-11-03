@@ -212,13 +212,6 @@ class ResellerContext extends UserContext
         return $this->reseller;
     }
 
-    protected function getUsage($item)
-    {
-        return $this->getCacheItem(self::CACHE_USAGE, $item, function () {
-            return $this->getContext()->invokeApiGet('RESELLER_STATS', ['type' => 'usage']);
-        });
-    }
-
     /**
      * Update or Create a new package on the server.
      * @link https://www.directadmin.com/features.php?id=583
