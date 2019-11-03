@@ -105,7 +105,7 @@ class Reseller extends User
      *
      * @return array
      */
-    protected function loadConfig()
+    public function loadConfig()
     {
         return $this->getContext()->invokeApiGet('RESELLER_STATS', ['type' => '']);
     }
