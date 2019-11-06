@@ -79,6 +79,25 @@ class Database extends BaseObject
     }
 
     /**
+     * @param string $userName
+     * @param string $password
+     * @param string $domain
+     * @return array
+     * @link: https://www.directadmin.com/features.php?id=1104
+     */
+    public function changePassword($userName, $password, $domain)
+    {
+        return $this->getContext()->invokeApiPost('DATABASES', [
+                'action' => 'modifyuser',
+                'name' => $this->getDatabaseName(),
+                'user' => $this->owner->getUsername() . '_' . $userName,
+                'domain' => $domain,
+                'passwd' => $password,
+                'passwd2' => $password,
+        ]);
+    }
+
+    /**
      * @return Database\AccessHost[]
      */
     public function getAccessHosts()
