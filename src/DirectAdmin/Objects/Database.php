@@ -87,6 +87,7 @@ class Database extends BaseObject
      */
     public function changePassword($userName, $password, $domain)
     {
+        $userName = str_replace($this->owner->getUsername() . '_', '', $userName);
         return $this->getContext()->invokeApiPost('DATABASES', [
                 'action' => 'modifyuser',
                 'name' => $this->getDatabaseName(),
