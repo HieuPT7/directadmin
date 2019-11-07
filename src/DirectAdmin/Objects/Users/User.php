@@ -463,6 +463,7 @@ class User extends BaseObject
      */
     public function getDatabase($databaseName)
     {
+        $databaseName = str_replace($this->getUsername() . '_' , '', $databaseName);
         if (!isset($this->databases)) {
             $this->getDatabases();
         }
