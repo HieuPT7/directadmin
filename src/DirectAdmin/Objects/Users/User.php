@@ -469,4 +469,28 @@ class User extends BaseObject
         }
         return isset($this->databases[$databaseName]) ? $this->databases[$databaseName] : null;
     }
+    
+    /**
+     * which will make the CMD_API_DOMAIN_OWNERS filter out all other domains
+     * Both Admin and Resellers can run this, but the Reseller can only do lookups on domains under their control (including their Users)
+     * @return array
+     * @link https://www.directadmin.com/features.php?id=1684
+     */
+    public function getDomainOwns()
+    {
+        return $this->getCache(self::CACHE_DOMAIN_OWNERS, function () {
+            return $this->getSelfManagedContext()->invokeApiGet('DOMAIN_OWNERS');
+        });
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDomainOwn($domain)
+    {
+        return $this->getCacheItem(static::CACHE_DOMAIN_OWNERS, $domain, function () {
+            return $this->getDomainOwns();
+        });
+    }
+
 }
