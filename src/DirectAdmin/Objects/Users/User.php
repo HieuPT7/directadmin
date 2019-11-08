@@ -29,6 +29,7 @@ class User extends BaseObject
     const CACHE_CONFIG = 'config';
     const CACHE_DATABASES = 'databases';
     const CACHE_USAGE = 'usage';
+    const CACHE_DOMAIN_OWNERS = 'domain_owners';
 
     /** @var Domain[] * */
     private $domains;
