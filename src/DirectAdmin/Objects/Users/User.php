@@ -494,4 +494,86 @@ class User extends BaseObject
         });
     }
 
+    /**
+     * @param string $keyName
+     * @return array
+     * @link https://www.directadmin.com/features.php?id=1298
+     * 
+     * return
+     * [
+     *  "allow_htm" => "no"
+     *  "clear_key" => "no"
+     *  "created_by" => "172.104.183.55"
+     *  "date_created" => "1573376686"
+     *  "expiry" => "1573437840"
+     *  "key" => ""
+     *  "max_uses" => "0"
+     *  "uses" => "0"
+     * ]
+     */
+    public function getLoginKey(string $keyName): array
+    {
+        $results = $this->getCacheItem(static::CACHE_LOGIN_KEY, $keyName, function () {
+            return $this->getContext()->invokeApiGet('LOGIN_KEYS', [
+                'action' => 'get',
+                'json' => 'no',
+            ]);
+        });
+
+        return Conversion::responseToArray($results);
+    }
+
+    public function createLoginKey(string $keyName, string $keyValue, string $password, $options = [])
+    {
+        $next_day = strtotime('+1 days');
+        $hour = date('H', $next_day);
+        $minute = date('i', $next_day);
+        $month = date('m', $next_day);
+        $day = date('d', $next_day);
+        $year = date('Y', $next_day);
+        $max_uses = 0;
+
+        $values  = array(
+            'action' => 'create',
+            'keyname' => $keyName,
+            'key' => $keyValue,
+            'key2' => $keyValue,
+            'hour' => $hour,
+            'minute' => $minute,
+            'month' => $month,
+            'day' => $day,
+            'year' => $year,
+            'max_uses' => $max_uses,
+            'ips' => '',
+            'clear_key' => 'yes',
+            'allow_htm' => 'yes',
+            'allow_html' => 'yes',
+            'passwd' => $password,
+            'never_expires' => 'no',
+            'create' => 'Create'
+        );
+
+        $options['action'] = 'create';
+        $options['create'] = 'Create';
+        $options['passwd'] = $password;
+        $options['keyname'] = $keyName;
+        $options['key'] = $keyValue;
+        $options['key2'] = $keyValue;
+
+        $values = array_merge($values, $options);
+        return $this->getContext()->invokeApiPost('LOGIN_KEYS', $values);
+    }
+
+
+    public function deleteLoginKey(string $keyName)
+    {
+        $values  = array(
+            'action' => 'select',
+            'keyname' => $keyName,
+            'select0' => $keyName,
+            'delete' => 'Delete'
+        );
+
+        return $this->getContext()->invokeApiPost('LOGIN_KEYS', $values);
+    }
 }
