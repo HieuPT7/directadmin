@@ -576,4 +576,19 @@ class User extends BaseObject
 
         return $this->getContext()->invokeApiPost('LOGIN_KEYS', $values);
     }
+
+    /**
+     * Modifies the package of the user. For available keys in the array check the documentation on
+     * CMD_API_MODIFY_USER in the linked document.
+     *
+     * @param string $package package name to be modified
+     * @url http://www.directadmin.com/api.html#modify
+     */
+    public function modifyPackage(string $package)
+    {
+        $this->getContext()->invokeApiPost('MODIFY_USER', array_merge(
+                ['action' => 'package', 'user' => $this->getUsername(), 'package' => $package]
+        ));
+        $this->clearCache();
+    }
 }
